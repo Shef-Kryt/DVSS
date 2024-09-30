@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Резюме Касьян Дем'ян">
+    <title>Резюме Касьян Дем'ян</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+    <link rel="stylesheet" href="styles.scss">
+    
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Темна тема */
+        body.dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+
+        /* Анімація для заголовків */
+        h1, h2, h5 {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .toggle-theme {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+        }
+
+        /* Вирівнювання заголовків по центру */
+        h2, h5 {
+            text-align: center;
+        }
+
+        /* Центрування секцій */
+        section {
+            text-align: center;
+        }
+        
+        /* Таблиці вирівняні по центру */
+        table {
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn btn-secondary toggle-theme" onclick="toggleTheme()">Змінити тему</button>
+
+    <header class="bg-light p-3 mb-4">
+        <div class="container">
+            <h1 class="text-center">Касьян Дем'ян</h1>
+            <img src="images/logo.png" class="mx-auto d-block" width="150" alt="Фото">
+            <nav class="nav justify-content-center mt-3">
+                <a class="nav-link" href="#about">Про мене</a>
+                <a class="nav-link" href="#education">Освіта</a>
+                <a class="nav-link" href="#skills">Навички</a>
+                <a class="nav-link" href="#projects">Проекти</a>
+                <a class="nav-link" href="#languages">Мови</a>
+                <a class="nav-link" href="#hobbies">Захоплення</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="about">
+            <h2>Про мене</h2>
+            <p>Короткий опис про себе. Я студент і крапка.</p>
+        </section>
+        <section id="education">
+            <h2>Освіта</h2>
+            <ol>
+                <li>Університет ЛНУ, Спеціальність 126 ФеС, 3 курс</li>
+            </ol>
+        </section>
+        <section id="skills">
+            <h2>Навички</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Навичка</th>
+                        <th>Рівень</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>HTML/CSS</td>
+                        <td>Середній+-</td>
+                    </tr>
+                    <tr>
+                        <td>JavaScript</td>
+                        <td>Середній</td>
+                    </tr>
+                    <tr>
+                        <td>C#</td>
+                        <td>Низький</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="hobbies">
+            <h2>Захоплення</h2>
+            <ul>
+                <li>Розробка ігор</li>
+            </ul>
+        </section>
+
+        <section id="languages">
+            <h2>Володіння іноземними мовами</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Мова</th>
+                        <th>Рівень</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Англійська</td>
+                        <td>Середній</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer class="text-center mt-4">
+        <h5>Контактна інформація: <a href="mailto:demiankasyan@google.com">demiankasyan@dmail.com</a>, Телефон: +3808855535</h5>
+        <p>&copy; 2024 Касьян Дем'ян. Дата створення: 4 вересня 2024 року.</p>
+    </footer>
+
+    <!-- Bootstrap JS і залежності -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Тема перемикання -->
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+</body>
+</html>

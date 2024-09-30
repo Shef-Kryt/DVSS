@@ -1,0 +1,173 @@
+// Основні кольори
+$primary-color: #333;
+$secondary-color: #ff7e5f;
+$accent-color: #feb47b;
+$text-color: #2c3e50;
+$white-color: #fff;
+$background-gradient: linear-gradient(to right, $secondary-color, $accent-color);
+
+// Шрифти
+$font-family: 'Arial', sans-serif;
+$heading-font-size: 2rem;
+$text-font-size: 1rem;
+
+// Міксини-яка дозволяє створювати блоки стилів, що можуть бути використані в різних місцях коду без повторення
+@mixin button-style {
+  background-color: $primary-color;
+  color: $white-color;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: adjust-color($primary-color, $lightness: -10%);
+  }
+}
+
+// Загальний стиль для тіла сторінки
+body {
+  font-family: $font-family;
+  margin: 0;
+  padding: 0;
+  background: $background-gradient;
+  color: $text-color;
+}
+
+header {
+  background-color: $primary-color;
+  color: $white-color;
+  padding: 15px;
+  text-align: center;
+
+  h1 {
+    font-size: 2.5rem;
+    margin: 0;
+  }
+}
+
+// Використання Flexbox для навігаційного меню- дозволяє елементам змінювати свої розміри відповідно до доступного простор
+nav ul {
+  display: flex;
+  justify-content: space-around; // Рівномірний розподіл пунктів меню
+  list-style: none;
+  padding: 0;
+  background-color: $primary-color;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: $white-color;
+  text-decoration: none;
+  font-size: $text-font-size;
+
+  &:hover {
+    color: $accent-color;
+  }
+}
+
+// Використання Flexbox для основного контенту
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+section {
+  background: $white-color;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+  width: 100%;
+  max-width: 800px;
+  h2 {
+    font-size: $heading-font-size;
+    color: adjust-color($text-color, $lightness: -10%);
+  }
+
+  p {
+    font-size: $text-font-size;
+    line-height: 1.6;
+  }
+}
+
+// Використання Flexbox для форм
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+
+  label {
+    margin-bottom: 5px;
+  }
+
+  input, select, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+// Використання Flexbox для кнопок
+input[type=submit], .button {
+  @include button-style;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Footer-містить інформацію про авторські права
+footer {
+  background-color: $primary-color;
+  color: $white-color;
+  padding: 20px;
+  text-align: center;
+
+  p {
+    margin: 0;
+  }
+}
+
+// Адаптивна верстка-для коректного відображення на пристроях
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: left;
+  }
+
+  section {
+    padding: 45px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  nav ul li {
+    margin: 0 10px;
+  }
+}
+section#about {
+  display: flex;
+  flex-direction: column;
+  align-items: center; // Центрування по горизонталі
+  justify-content: center; // Центрування по вертикалі (якщо потрібно)
+  text-align: center; // Центрування тексту
+
+  img {
+    margin-top: 20px; // Відступ зверху, якщо потрібно
+  }
+}
