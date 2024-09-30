@@ -1,17 +1,12 @@
-// Основні кольори
 $primary-color: #333;
 $secondary-color: #ff7e5f;
 $accent-color: #feb47b;
 $text-color: #2c3e50;
 $white-color: #fff;
 $background-gradient: linear-gradient(to right, $secondary-color, $accent-color);
-
-// Шрифти
 $font-family: 'Arial', sans-serif;
 $heading-font-size: 2rem;
 $text-font-size: 1rem;
-
-// Міксини-яка дозволяє створювати блоки стилів, що можуть бути використані в різних місцях коду без повторення
 @mixin button-style {
   background-color: $primary-color;
   color: $white-color;
@@ -24,8 +19,6 @@ $text-font-size: 1rem;
     background-color: adjust-color($primary-color, $lightness: -10%);
   }
 }
-
-// Загальний стиль для тіла сторінки
 body {
   font-family: $font-family;
   margin: 0;
@@ -45,11 +38,9 @@ header {
     margin: 0;
   }
 }
-
-// Використання Flexbox для навігаційного меню- дозволяє елементам змінювати свої розміри відповідно до доступного простор
 nav ul {
   display: flex;
-  justify-content: space-around; // Рівномірний розподіл пунктів меню
+  justify-content: space-around; 
   list-style: none;
   padding: 0;
   background-color: $primary-color;
@@ -68,8 +59,6 @@ nav ul li a {
     color: $accent-color;
   }
 }
-
-// Використання Flexbox для основного контенту
 main {
   display: flex;
   flex-direction: column;
@@ -96,7 +85,6 @@ section {
   }
 }
 
-// Використання Flexbox для форм
 .form-group {
   display: flex;
   flex-direction: column;
@@ -115,7 +103,6 @@ section {
   }
 }
 
-// Використання Flexbox для кнопок
 input[type=submit], .button {
   @include button-style;
   display: flex;
@@ -135,7 +122,6 @@ footer {
   }
 }
 
-// Адаптивна верстка-для коректного відображення на пристроях
 @media (max-width: 768px) {
   nav ul {
     flex-direction: column;
@@ -163,11 +149,11 @@ footer {
 section#about {
   display: flex;
   flex-direction: column;
-  align-items: center; // Центрування по горизонталі
-  justify-content: center; // Центрування по вертикалі (якщо потрібно)
-  text-align: center; // Центрування тексту
+  align-items: center; /
+  justify-content: center; 
+  text-align: center; 
 
   img {
-    margin-top: 20px; // Відступ зверху, якщо потрібно
+    margin-top: 20px; 
   }
 }
